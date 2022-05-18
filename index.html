@@ -15,26 +15,26 @@
         <button class="gray" onclick="Clear()">c</button>
         <button class="gray">+/-</button>
         <button class="gray">%</button>
-        <button class="orange" onclick="myScript('/')">÷</button>
+        <button class="orange" onclick="addOperator('÷')">÷</button>
 
-        <button onclick="myScript(7)">7</button>
-        <button onclick="myScript(8)">8</button>
-        <button onclick="myScript(9)">9</button>
-        <button class="orange">x</button>
+        <button onclick="addNumber(7)">7</button>
+        <button onclick="addNumber(8)">8</button>
+        <button onclick="addNumber(9)">9</button>
+        <button class="orange" onclick="addOperator('x')">x</button>
 
-        <button onclick="myScript(4)">4</button>
-        <button onclick="myScript(5)">5</button>
-        <button onclick="myScript(6)">6</button>
-        <button class="orange">-</button>
+        <button onclick="addNumber(4)">4</button>
+        <button onclick="addNumber(5)">5</button>
+        <button onclick="addNumber(6)">6</button>
+        <button class="orange" onclick="addOperator('-')">-</button>
 
-        <button onclick="myScript(1)">1</button>
-        <button onclick="myScript(2)">2</button>
-        <button onclick="myScript(3)">3</button>
-        <button class="orange">+</button>
+        <button onclick="addNumber(1)">1</button>
+        <button onclick="addNumber(2)">2</button>
+        <button onclick="addNumber(3)">3</button>
+        <button class="orange" onclick="addOperator('+')">+</button>
 
-        <button id="zero" onclick="myScript(0)">0</button>
+        <button id="zero" onclick="addNumber(0)">0</button>
         <button>,</button>
-        <button class="orange" onclick="callAnswer()">=</button>
+        <button class="orange" onclick="Answer()">=</button>
       </div>
     </div>
   </body>
