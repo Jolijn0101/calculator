@@ -1,7 +1,7 @@
 let sum = '0';
 let formula;
 
-const addNumber = (number) => {
+function addNumber(number) {
   if (sum.length >= 15) {
     return null;
   }
@@ -14,9 +14,9 @@ const addNumber = (number) => {
     formula = formula + number.toString();
   }
   document.getElementById('screen').innerHTML = sum;
-};
+}
 
-const addOperator = (operator) => {
+function addOperator(operator) {
   if (sum.length >= 15) {
     return null;
   }
@@ -39,9 +39,9 @@ const addOperator = (operator) => {
     formula = formula + operator;
   }
   document.getElementById('screen').innerHTML = sum;
-};
+}
 
-const operatorSearch = () => {
+function operatorSearch() {
   const operatorArr = ['-', '+', '/', '*'];
   let lastOperator = 0;
   for (let index = 0; index < operatorArr.length; index++) {
@@ -51,9 +51,9 @@ const operatorSearch = () => {
     }
   }
   return lastOperator;
-};
+}
 
-const Percentage = () => {
+function Percentage() {
   if (sum == '0') {
     return null;
   }
@@ -62,7 +62,7 @@ const Percentage = () => {
   formula = formula.slice(0, numIndex) + percentage;
   sum = sum.slice(0, numIndex) + percentage;
   document.getElementById('screen').innerHTML = sum;
-};
+}
 
 function negativeNum() {
   if (sum == '0') {
@@ -80,12 +80,12 @@ function negativeNum() {
   document.getElementById('screen').innerHTML = sum;
 }
 
-const Clear = () => {
+function Clear() {
   sum = '0';
   document.getElementById('screen').innerHTML = sum;
-};
+}
 
-const Answer = () => {
+function Answer() {
   try {
     let answer = eval(formula);
     sum = answer.toString();
@@ -95,4 +95,4 @@ const Answer = () => {
       document.getElementById('screen').innerHTML = 'Error';
     }
   }
-};
+}
