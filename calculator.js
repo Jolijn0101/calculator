@@ -37,8 +37,6 @@ const addOperator = (operator) => {
   document.getElementById('screen').innerHTML = sum;
 };
 
-const negativeNum = () => {};
-
 const Clear = () => {
   sum = '0';
   document.getElementById('screen').innerHTML = sum;
