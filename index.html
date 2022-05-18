@@ -14,7 +14,7 @@
       <div id="button-container">
         <button class="gray" onclick="Clear()">c</button>
         <button class="gray" onclick="addOperator('-')">+/-</button>
-        <button class="gray">%</button>
+        <button class="gray" onclick="Percentage()">%</button>
         <button class="orange" onclick="addOperator('÷')">÷</button>
 
         <button onclick="addNumber(7)">7</button>
@@ -33,7 +33,7 @@
         <button class="orange" onclick="addOperator('+')">+</button>
 
         <button id="zero" onclick="addNumber(0)">0</button>
-        <button>,</button>
+        <button onclick="addOperator(',')">,</button>
         <button class="orange" onclick="Answer()">=</button>
       </div>
     </div>
