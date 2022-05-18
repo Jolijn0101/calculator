@@ -54,12 +54,31 @@ const operatorSearch = () => {
 };
 
 const Percentage = () => {
+  if (sum == '0') {
+    return null;
+  }
   let numIndex = operatorSearch() + 1;
   let percentage = formula.slice(numIndex) / 100;
   formula = formula.slice(0, numIndex) + percentage;
   sum = sum.slice(0, numIndex) + percentage;
   document.getElementById('screen').innerHTML = sum;
 };
+
+function negativeNum() {
+  if (sum == '0') {
+    return null;
+  }
+  let numIndex = operatorSearch() + 1;
+  let endPart = formula.slice(numIndex);
+  if (numIndex === 1) {
+    formula = '(-' + formula + ')';
+    sum = '(-' + sum + ')';
+  } else {
+    formula = formula.slice(0, numIndex) + '(-' + endPart + ')';
+    sum = sum.slice(0, numIndex) + '(-' + endPart + ')';
+  }
+  document.getElementById('screen').innerHTML = sum;
+}
 
 const Clear = () => {
   sum = '0';
