@@ -30,7 +30,7 @@ This calculator has a view features:
 ## How to use:
 
 This calculator doesn't need any installation and works in any browser. Click on this link to see the calculator in action: \
-[Calculator github page](https://website-name.com) \
+[Calculator github page](https://jolijn0101.github.io/calculator/) \
 Or copy this repository and run it locally.
 
 <br>
