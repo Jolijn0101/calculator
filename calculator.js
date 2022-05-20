@@ -3,10 +3,6 @@ let formula;
 
 //==adds number to the sum and formula string==
 function addNumber(number) {
-  //if sum string is too long for screen return null
-  if (sum.length >= 15) {
-    return null;
-  }
   //if the sum has only '0' replace for current number else place the number at the end of string
   if (sum === '0') {
     sum = number.toString();
@@ -21,12 +17,8 @@ function addNumber(number) {
 
 //==adds operator to the sum and formula string==
 function addOperator(operator) {
-  //if sum string is too long for screen return null
-  if (sum.length >= 15) {
-    return null;
-  }
   //if sum = '0' and operator = '-' overwrite '0' for '-'
-  else if (sum === '0' && operator === '-') {
+  if (sum === '0' && operator === '-') {
     sum = operator;
     formula = operator;
   }
@@ -130,6 +122,7 @@ function Answer() {
   try {
     let answer = eval(formula);
     sum = answer.toString();
+    formula = answer.toString();
     document.getElementById('screen').innerHTML = sum;
   } catch (e) {
     //let people know if the calculation went wrong

@@ -23,12 +23,13 @@ body {
 #screen {
   width: 16rem;
   margin: 1.5rem;
-  height: 5rem;
+  padding: 1.5rem;
+  min-height: 5rem;
   background-color: #878787;
   border-radius: 1rem;
   color: #e8e8e8;
   text-align: right;
-  padding: 1.5rem;
+  word-wrap: break-word;
 }
 
 #button-container {

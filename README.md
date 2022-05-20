@@ -48,5 +48,5 @@ I made a lot of eventhandlers in my HTML file and I wonder if I could code it an
 The calculator could only be used by clicking on the numbers. In the future I hope I could
 let it work also by typing.
 <br><br>
-Feel free to play around with it and if you have any constructive critism, let me know
+Feel free to play around with it and if you have any feedback, let me know
 Would be nice to learn from it.
