@@ -1,6 +1,16 @@
 let sum = '0';
 let formula;
 
+let buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => calculator(button.innerHTML));
+});
+
+function calculator(input) {
+  console.log(input);
+}
+
 //==adds number to the sum and formula string==
 function addNumber(number) {
   //if the sum has only '0' replace for current number else place the number at the end of string
