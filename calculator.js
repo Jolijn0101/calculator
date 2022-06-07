@@ -8,40 +8,33 @@ buttons.forEach((button) => {
 });
 
 function calculator(input) {
-  console.log(input);
-
   if (sum === '0') {
     //number clicked and sum is '0'
     if (isFinite(input)) {
       sum = input;
       formula = input;
-      document.getElementById('screen').innerHTML = sum;
     }
-
     //. clicked and sum is '0'
     if (input === '.') {
       sum = sum + '.';
       formula = '0' + '.';
-      document.getElementById('screen').innerHTML = sum;
     }
+    document.getElementById('screen').innerHTML = sum;
   } else {
     //when a number or operant is clicked, after first num is set
     if (isFinite(input) || input === '+' || input === '-' || input === '.') {
       sum = sum + input;
       formula = formula + input;
-      document.getElementById('screen').innerHTML = sum;
     }
 
     if (input === 'x') {
       sum = sum + 'x';
       formula = formula + '*';
-      document.getElementById('screen').innerHTML = sum;
     }
 
     if (input === '÷') {
       sum = sum + '÷';
       formula = formula + '/';
-      document.getElementById('screen').innerHTML = sum;
     }
 
     if (input === '%') {
@@ -58,8 +51,6 @@ function calculator(input) {
         formula = formula.slice(0, numIndex) + percentage;
         sum = sum.slice(0, numIndex) + percentage;
       }
-      //display the new sum in the screen
-      document.getElementById('screen').innerHTML = sum;
     }
 
     if (input === '+/-') {
@@ -77,27 +68,25 @@ function calculator(input) {
         formula = formula.slice(0, numIndex) + '(-' + endPart + ')';
         sum = sum.slice(0, numIndex) + '(-' + endPart + ')';
       }
-      //display the new sum string in the screen
-      document.getElementById('screen').innerHTML = sum;
     }
 
     if (input === 'c') {
       sum = '0';
       formula = '0';
-      document.getElementById('screen').innerHTML = sum;
     }
+    document.getElementById('screen').innerHTML = sum;
+  }
 
-    if (input === '=') {
-      try {
-        let answer = eval(formula);
-        sum = answer.toString();
-        formula = answer.toString();
-        document.getElementById('screen').innerHTML = sum;
-      } catch (e) {
-        //let people know if the calculation went wrong
-        if (e instanceof SyntaxError) {
-          document.getElementById('screen').innerHTML = 'Error';
-        }
+  if (input === '=') {
+    try {
+      let answer = eval(formula);
+      sum = answer.toString();
+      formula = answer.toString();
+      document.getElementById('screen').innerHTML = sum;
+    } catch (e) {
+      //let people know if the calculation went wrong
+      if (e instanceof SyntaxError) {
+        document.getElementById('screen').innerHTML = 'Error';
       }
     }
   }
