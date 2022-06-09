@@ -1,24 +1,27 @@
 let sum = '0';
 let formula;
 
+//selects every button and adds an eventhandler
 let buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => calculator(button.innerHTML));
 });
 
+//the main function of the calculator
 function calculator(input) {
   if (sum === '0') {
-    //number clicked and sum is '0'
+    //number clicked sum is '0' sum and formula are same as input
     if (isFinite(input)) {
       sum = input;
       formula = input;
     }
-    //. clicked and sum is '0'
+    //. clicked and sum is '0' => '0.'
     if (input === '.') {
       sum = sum + '.';
       formula = '0' + '.';
     }
+    //displays the new sum in the screen
     document.getElementById('screen').innerHTML = sum;
   } else {
     //when a number or operant is clicked, after first num is set
@@ -26,17 +29,17 @@ function calculator(input) {
       sum = sum + input;
       formula = formula + input;
     }
-
+    //'x' is clicked add 'x' to sum '*' to formula
     if (input === 'x') {
       sum = sum + 'x';
       formula = formula + '*';
     }
-
+    //'÷' clicked add '÷' to sum '/' to formula
     if (input === '÷') {
       sum = sum + '÷';
       formula = formula + '/';
     }
-
+    //makes a percentage of last number
     if (input === '%') {
       //gets the last index of operator in formula string and adds 1 to it
       let numIndex = operatorSearch() + 1;
@@ -52,7 +55,7 @@ function calculator(input) {
         sum = sum.slice(0, numIndex) + percentage;
       }
     }
-
+    //makes a negative number of a positieve one
     if (input === '+/-') {
       //gets index of last operator in formula string and adds 1 to it
       let numIndex = operatorSearch() + 1;
@@ -69,14 +72,16 @@ function calculator(input) {
         sum = sum.slice(0, numIndex) + '(-' + endPart + ')';
       }
     }
-
+    //'c' clicked remove all
     if (input === 'c') {
       sum = '0';
       formula = '0';
     }
+    //displays the new sum in the screen
     document.getElementById('screen').innerHTML = sum;
   }
 
+  //calculates the formula and displays it
   if (input === '=') {
     try {
       let answer = eval(formula);
@@ -92,7 +97,7 @@ function calculator(input) {
   }
 }
 
-//==will search for last operator in formula string==
+//helper function => will search for last operator in formula string
 function operatorSearch() {
   const operatorArr = ['-', '+', '/', '*'];
   let lastOperator = 0;
